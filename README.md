@@ -1,2 +1,6 @@
-# csd-345
- Interactive Development with JavaScript
+# CSD 345 Interactive Development with JavaScript
+
+## Contributors
+
+- Professor Soriano
+- Andrew McCloud
