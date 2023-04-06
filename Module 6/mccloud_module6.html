@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<html lang="en-us">
+
+    <head>
+
+        <title>Fibonacci First 30 Numbers</title>
+
+    </head>
+
+    <body>
+
+        <h1>Test</h1>
+
+        <p id="text-area"></p>
+
+        <script>
+
+            
+            let n1 = 1, n2 = 1, nextTerm = 2;
+
+            let display = "1 - " + n1 + "<br>2 - " + n2 + "<br>";
+
+            for(let i = 3; i <= 30; i++){
+
+                display += i + " - " + nextTerm + "<br>";
+
+                nextTerm = n1 + n2;
+
+                n1 = n2;
+
+                n2 = nextTerm;
+
+            }
+
+            document.getElementById("text-area").innerHTML = display;
+
+        </script>
+
+    </body>
+
+</html>
