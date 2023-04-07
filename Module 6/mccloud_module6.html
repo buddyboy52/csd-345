@@ -10,26 +10,32 @@
 
     <body>
 
-        <h1>Test</h1>
+        <h1 style="text-align: center">First 30 numbers in Fibonacci Sequence</h1>
 
-        <p id="text-area"></p>
+        <p id="text-area" style="text-align: center"></p>
 
         <script>
 
             
-            let n1 = 1, n2 = 1, nextTerm = 2;
+            let numOne = 1, numTwo = 1, nextNum = 2;
 
-            let display = "1 - " + n1 + "<br>2 - " + n2 + "<br>";
+            let display = "1 - " + numOne + "<br>2 - " + numTwo + "<br>";
+
+            nextNum = numOne + numTwo;
+
+            numOne = numTwo;
+
+            numTwo = nextNum;
 
             for(let i = 3; i <= 30; i++){
 
-                display += i + " - " + nextTerm + "<br>";
+                display += i + " - " + nextNum + "<br>";
 
-                nextTerm = n1 + n2;
+                nextNum = numOne + numTwo;
 
-                n1 = n2;
+                numOne = numTwo;
 
-                n2 = nextTerm;
+                numTwo = nextNum;
 
             }
 
