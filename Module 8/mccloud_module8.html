@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html lang="en-us">
+
+    <head>
+
+
+    </head>
+
+    <body>
+
+        <table id="table" border="1"></table>
+
+        <script>
+            {
+                let display = "<tr><td>Initial Value</td><td>Square Root</td><td>Power of 2</td><td>Power of 3</td></tr>";
+
+                for(let x = 4; x <= 14; x++){
+
+                    let squareRoot = (Math.round(100 * Math.sqrt(x))/100).toFixed(2);
+
+                    let squared = Math.pow(x, 2);
+
+                    let cubed = Math.pow(x, 3);
+
+                    display += "<tr><td>" + x + "</td><td>" + squareRoot + "</td><td>" + squared + "</td><td>" + cubed + "</td></tr>";
+
+                }
+
+                document.getElementById("table").innerHTML = display;
+
+            }
+        </script>
+
+    </body>
+
+</html>
