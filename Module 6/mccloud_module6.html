@@ -1,5 +1,15 @@
 <!DOCTYPE html>
 
+<!--
+
+    Andrew McCloud
+
+    4/12/2023
+
+    Module 6 Assignment
+
+-->
+
 <html lang="en-us">
 
     <head>
@@ -12,7 +22,7 @@
 
         <h1 style="text-align: center">First 30 numbers in Fibonacci Sequence</h1>
 
-        <p id="text-area" style="text-align: center"></p>
+        <p id="text-area"></p>
 
         <script>
 
@@ -27,9 +37,9 @@
 
             numTwo = nextNum;
 
-            for(let i = 3; i <= 30; i++){
+            for(let x = 3; x <= 30; x++){
 
-                display += i + " - " + nextNum + "<br>";
+                display += x + " - " + nextNum + "<br>";
 
                 nextNum = numOne + numTwo;
 
@@ -39,7 +49,7 @@
 
             }
 
-            document.getElementById("text-area").innerHTML = display;
+            document.write(display);
 
         </script>
 
