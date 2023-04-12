@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<!--
+
+    Andrew McCloud
+
+    4/19/2023
+
+    Module 7 Assignment
+
+-->
+
+<html lang="en-us">
+
+    <head>
+
+        <title>Arrays in JS</title>
+
+    </head>
+
+    <body style="background-color: lightgreen">
+
+        <p id="output" style="font-weight: bold"></p>
+
+        <script>
+            {
+
+                const teams = ["Nebraska Huskers", "Wyoming Cowboys", "LSU Tigers", "Denver Broncos", 
+                "Tampa Bay Buccaneers", "Miami Heat", "Denver Nuggets", "Golden State Warriors", "Colorado Rockies", "Chicago Cubs"];
+
+                let display = "-------- Normal --------<br>", x;
+
+                for(x = 0; x < teams.length; x++){
+
+                    display += teams[x] + "<br>";
+
+                }
+
+                display += "<br>-------- Reversed --------<br>";
+
+                for(x = teams.length - 1; x >= 0; x--){
+
+                    display += teams[x] + "<br>";
+
+                }
+
+                document.getElementById("output").innerHTML = display;
+
+            }
+        </script>
+
+    </body>
+
+</html>
