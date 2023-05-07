@@ -1,79 +1,105 @@
 <!DOCTYPE html>
 
+<!--
+
+    Andrew McCloud
+
+    4/40/2023
+
+    Module 9 Assignment
+
+-->
+
 <html lang="en-us">
+  <head>
+    <!--Link to our css stylesheet-->
+    <link rel="stylesheet" href="mccloud_module9.css" type="text/css" />
 
-    <head>
+    <!--Give the web page a title-->
+    <title>Functions in JS</title>
+  </head>
 
-        <link rel="stylesheet" href="mccloud_module9.css" type="text/css">
+  <body>
+    <!--Create a div to hold our title and table so they are together-->
+    <div>
+      <!--Create a h2 header for a title in our webpage-->
+      <h2 id="title"></h2>
 
-    </head>
+      <!--Create a table object for us to display the results-->
+      <table id="table" border="1">
+        <!--Give the table a header-->
+        <tr>
+          <td>Negatives</td>
+          <td>Zeros</td>
+          <td>Positives</td>
+        </tr>
+      </table>
+    </div>
 
-    <body>
+    <!--Create a script so that we can add functionality to our webpage-->
+    <script>
+      {
+        // Create a hard coded array to test our function
+        var numbers = [-2, 2, 4, 6, 0, -3, 0, 1, 3, -5, -12];
 
-        <h2 id="title"></h2>
+        // Display the array in the h2 object for a title on the webpage
+        // This is also to show how what the array contents are (for testing purposes)
+        document.getElementById("title").innerHTML =
+          "Original Array<br> [" + numbers + "]";
 
-        <table id="table" border="1">
+        // Create a function that accepts an int array parameter
+        function counter(numArray) {
+          // Create 3 variables for the zeros, negatives, and positives
+          let zeros = 0,
+            positives = 0,
+            negatives = 0;
 
-            <tr>
-                <td>Negatives</td>
-                <td>Zeros</td>
-                <td>Positives</td>
-            </tr>
+          // Use a for loop to run through the array of numbers
+          for (let x = 0; x < numArray.length; x++) {
+            // If the number at the x position in the array is greater than 0
+            // add 1 to the positives variable
+            if (numArray[x] > 0) {
+              positives++;
 
-        </table>
+              // Else, if the number at the x position in the array is less than 0
+              // add 1 to the negatives array
+            } else if (numArray[x] < 0) {
+              negatives++;
 
-        <script>
-            {
-
-                var numbers = [-2, 2, 4, 6, 0, -3, 0, 1, 3, -5, -12];
-
-                document.getElementById("title").innerHTML = "Original Array<br> [" + numbers + "]";
-
-                function counter(numArray){
-
-                    let zeros = 0, positives = 0, negatives = 0;
-
-                    for(let x = 0; x < numArray.length; x++){
-
-                        if(numArray[x] > 0){
-
-                            positives++;
-
-                        }else if(numArray[x] < 0){
-
-                            negatives++;
-
-                        }else{
-
-                            zeros++;
-
-                        }
-
-                    }
-
-                    let elementsArray = [negatives, zeros, positives];
-
-                    return elementsArray;
-
-                }
-
-                let newArray = counter(numbers);
-
-                let display = "<tr>";
-
-                for(let y = 0; y < newArray.length; y++){
-
-                    display += "<td>" + newArray[y] + "</td>";
-                    
-                }
-
-                display += "</tr>";
-
-                document.getElementById("table").innerHTML += display;
-
+              // If the other two options are not satisfied (the number is not greater than or less than 0),
+              // add 1 to the zeroes variable
+            } else {
+              zeros++;
             }
-        </script>
+          }
 
-    </body>
+          // Create a new array to hold the negatives, zeros, and positives variables
+          let elementsArray = [negatives, zeros, positives];
 
+          // Return the array from our function
+          return elementsArray;
+        }
+
+        // Create an array object and call the counter function
+        // We are using the hard coded array we made earlier as the parameter
+        let newArray = counter(numbers);
+
+        // Create a display variable with a table row tag so we can display the array in 1 single row
+        let display = "<tr>";
+
+        // Loop through the new array with the positives, zeros, and negatives variables
+        for (let y = 0; y < newArray.length; y++) {
+          // Add the tag <td> for new table data to be added to the table
+          // along with the number that is at the y position of the array
+          display += "<td>" + newArray[y] + "</td>";
+        }
+
+        // Add a closing table row tag to the display variable
+        display += "</tr>";
+
+        // Display the display variable in the object with the "table" id
+        document.getElementById("table").innerHTML += display;
+      }
+    </script>
+  </body>
 </html>
