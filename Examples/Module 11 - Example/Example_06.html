@@ -1,0 +1,72 @@
+<!DOCTYPE HTML PUBLIC '-//W3C//DTD HTML 4.01 Transitional//EN'
+  'http://www.w3.org/TR/1999/REC-html401-19991224/loose.dtd'>
+
+<html xmlns='http://www.w3.org/1999/xhtml'>
+  <head>
+    <title>
+      Example 11_01
+    </title>
+    <script>
+
+      function displayImage(imageFile){
+        var largerImage = document.getElementById("mainImage");
+        var newNode = document.createElement("img");
+        newNode.id = "mainImage";
+        newNode.src = imageFile;
+        newNode.alt = "Large Image";
+        newNode.className = "mainImage";
+        newNode.style.width = "300px";
+        newNode.style.height = "200px";
+        largerImage.parentNode.replaceChild(newNode, largerImage);
+      }
+    </script>
+
+    <link rel='stylesheet' type='text/css' href='body1.css' />
+
+  </head>
+
+  <body>
+
+    <table>
+      <tr>
+        <td rowspan="3">
+          <img src="0001_3.jpg"  id="mainImage" alt="Large Image"
+          width = "300px" height = "200px"">
+        </td>
+      <td><img src="0001_6.jpg"
+               onclick="displayImage('0001_3.jpg')"
+          ></td>
+      <td><img src="0002_6.jpg"
+               onclick="displayImage('0002_3.jpg')"
+          ></td>
+      <td><img src="0003_6.jpg"
+               onclick="displayImage('0003_3.jpg')"
+          ></td>
+      </tr>
+      <tr>
+      <td><img src="0004_6.jpg"
+               onclick="displayImage('0004_3.jpg')"
+          ></td>
+      <td><img src="0005_6.jpg"
+               onclick="displayImage('0005_3.jpg')"
+          ></td>
+      <td><img src="0006_6.jpg"
+               onclick="displayImage('0006_3.jpg')"
+          ></td>
+      </tr>
+      <tr>
+      <td><img src="0007_6.jpg"
+               onclick="displayImage('0007_3.jpg')"
+          ></td>
+      <td><img src="0008_6.jpg"
+               onclick="displayImage('0008_3.jpg')"
+          ></td>
+      <td><img src="0009_6.jpg"
+               onclick="displayImage('0009_3.jpg')"
+          ></td>
+      </tr>
+    </table>
+
+  </body>
+
+</html>

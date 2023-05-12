@@ -1,0 +1,80 @@
+<!DOCTYPE HTML PUBLIC '-//W3C//DTD HTML 4.01 Transitional//EN'
+  'http://www.w3.org/TR/1999/REC-html401-19991224/loose.dtd'>
+
+<html xmlns='http://www.w3.org/1999/xhtml'>
+  <head>
+    <title>
+      Example 11_02
+    </title>
+    <script>
+
+      var fileTitles = ["0001_3.jpg", "0002_3.jpg", "0003_3.jpg", "0004_3.jpg", "0005_3.jpg", "0006_3.jpg", 
+                        "0007_3.jpg", "0008_3.jpg", "0009_3.jpg", "0010_3.jpg", "0011_3.jpg", "0012_3.jpg",
+                        "0013_3.jpg", "0014_3.jpg"];
+
+      function startToRotate(){
+        var position = Math.floor(Math.random() * 10);
+
+        for(var i = 0; i < 5; ++i){
+          
+          rotateImages(i, position++);
+        }
+      }
+
+      function rotateImages(i, position){
+
+          var imageID = "image_" + (i + 1);
+          imageFile = fileTitles[position++];
+          var largerImage = document.getElementById("image_" + (i + 1));
+          var newNode = document.createElement("img");
+          newNode.id = imageID;
+          newNode.src = imageFile;
+          newNode.alt = "Image " + i + 1;
+          newNode.className = imageID;
+          newNode.style.width = "300px";
+          newNode.style.height = "200px";
+          newNode.onclick = function() { startToRotate(); };
+          largerImage.parentNode.replaceChild(newNode, largerImage);
+      }
+
+    </script>
+
+    <link rel='stylesheet' type='text/css' href='body1.css' />
+
+  </head>
+
+  <body>
+
+    <table>
+      <tr>
+        <td>
+          <img src="0001_3.jpg"  id="image_1" alt="Image 1"
+          width = "300px" height = "200px""
+          onclick="startToRotate()">
+        </td>
+        <td>
+          <img src="0002_3.jpg"  id="image_2" alt="Image 1"
+          width = "300px" height = "200px""
+          onclick="startToRotate()">
+        </td>
+        <td>
+          <img src="0003_3.jpg"  id="image_3" alt="Image 1"
+          width = "300px" height = "200px""
+          onclick="startToRotate()">
+        </td>
+        <td>
+          <img src="0004_3.jpg"  id="image_4" alt="Image 1"
+          width = "300px" height = "200px""
+          onclick="startToRotate()">
+        </td>
+        <td>
+          <img src="0005_3.jpg"  id="image_5" alt="Image 1"
+          width = "300px" height = "200px""
+          onclick="startToRotate()">
+        </td>
+      </tr>
+    </table>
+
+  </body>
+
+</html>
