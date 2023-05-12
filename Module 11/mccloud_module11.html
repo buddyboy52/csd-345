@@ -14,14 +14,18 @@
 
         <div>
 
-            <img src="Images/wncc.jpg" alt="Western Nebraska Community College">
+            <img id="schoolIMG" src="Images/wncc.jpg" alt="Western Nebraska Community College" onclick="changePicture('schoolIMG')">
 
         </div>
         
 
         <script>
 
+            function changePicture(id){
 
+                document.getElementById(id).src = "Images/bellevue.jpg";
+
+            }
 
         </script>
 
