@@ -1,5 +1,15 @@
 <!DOCTYPE html>
 
+<!--
+
+    Andrew McCloud
+
+    5/8/2023
+
+    Module 11 Assignment
+
+-->
+
 <html lang="en-us">
 
     <head>
@@ -12,21 +22,82 @@
 
     <body>
 
-        <div>
+        <div id="mainPic">
 
-            <img id="schoolIMG" src="Images/wncc.jpg" alt="Western Nebraska Community College" onclick="changePicture('schoolIMG')">
+            <figure>
+
+                <img id="schoolIMG" src="Images/wncc.jpg" alt="Western Nebraska Community College" onclick="changeColPic()">
+                <figcaption id="schoolCaption">Where it started... (Click the image)</figcaption>
+
+            </figure>
+
+        </div>
+
+        <div id="display"">
+            
+            <br>
+            <br>
+
+            <h3>Favorite Hobbies</h3>
+            
+            <img id="displayPic" src="Images/blank.png">
+
+            <br>
+
+            <div id="row">
+
+                <div id="column">
+
+                    <img src="Images/huskers.png" alt="Nebraska Huskers" onclick="displayFav('Images/huskers.png')">
+
+                </div>
+
+                <div id="column">
+
+                    <img src="Images/golf.jpg" alt="Golfing" onclick="displayFav('Images/golf.jpg')">
+                    
+                </div>
+
+                <div id="column">
+
+                    <img src="Images/coding.jpg" alt="Coding" onclick="displayFav('Images/coding.jpg')">
+                    
+                </div>
+
+            </div>
 
         </div>
         
 
         <script>
+            {
+                let counter = 0;
 
-            function changePicture(id){
+                function changeColPic(){
 
-                document.getElementById(id).src = "Images/bellevue.jpg";
+                    counter++;
+
+                    if(counter % 2 == 0){
+
+                        document.getElementById("schoolIMG").src = "Images/wncc.jpg";
+                        document.getElementById("schoolCaption").innerHTML = "Where it all started... (Click the image)";
+
+                    }else{
+
+                        document.getElementById("schoolIMG").src = "Images/bellevue.jpg";
+                        document.getElementById("schoolCaption").innerHTML = "Where we are at now :-)";
+
+                    }
+
+                }
+
+                function displayFav(source){
+
+                    document.getElementById("displayPic").src = source;
+
+                }
 
             }
-
         </script>
 
     </body>

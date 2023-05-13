@@ -1,0 +1,48 @@
+figure{
+
+    text-align: center;
+
+}
+
+h3{
+
+    text-align: center;
+
+}
+
+#displayPic{
+
+    display: block;
+    height: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 200px;
+
+}
+
+#mainPic{
+
+    display: flex;
+    justify-content: center;
+
+}
+
+#column{
+
+    flex: 33.33%;
+
+}
+
+#column img{
+
+    width: 200px;
+    height: 200px;
+
+}
+
+#row{
+
+    display: flex;
+    text-align: center;
+
+}
